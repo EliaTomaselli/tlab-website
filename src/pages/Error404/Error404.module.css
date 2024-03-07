@@ -1,0 +1,11 @@
+.Error404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff0000;
+  background-color: #000000;
+  text-align: center;
+}
