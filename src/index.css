@@ -1,3 +1,28 @@
+:root {
+  --black1: #000;
+  --black2: #111;
+  --black3: #222;
+  --black4: #333;
+  --black5: #444;
+  --gray1: #555;
+  --gray2: #666;
+  --gray3: #777;
+  --gray4: #888;
+  --gray5: #999;
+  --white1: #aaa;
+  --white2: #bbb;
+  --white3: #ccc;
+  --white4: #ddd;
+  --white5: #eee;
+
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 16px;
+  --font-size-xlarge: 18px;
+  --font-size-xxlarge: 22px;
+  --font-size-xxxlarge: 26px;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;

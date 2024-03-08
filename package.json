@@ -5,6 +5,8 @@
 	"type": "module",
 	"homepage": "https://EliaTomaselli.github.io/tlab-website",
 	"dependencies": {
+		"clsx": "^2.1.0",
+		"flag-icons": "^7.2.0",
 		"i18next": "^23.10.0",
 		"i18next-browser-languagedetector": "^7.2.0",
 		"react": "^18.2.0",
