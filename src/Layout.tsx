@@ -1,13 +1,19 @@
+import styles from "./Layout.module.css";
+
 import TopBar from "./components/TopBar/TopBar";
+import Footer from "./components/Footer/Footer";
 
-import { Outlet } from "react-router-dom";
+type LayoutProps = {
+	children: React.ReactNode;
+};
 
-function Layout() {
+function Layout({ children }: LayoutProps) {
 	return (
-		<>
+		<div className={styles.Layout}>
 			<TopBar />
-			<Outlet />
-		</>
+			{children}
+			<Footer />
+		</div>
 	);
 }
 

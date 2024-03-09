@@ -6,6 +6,10 @@ import de from "./locales/de/translation.json";
 import en from "./locales/en/translation.json";
 import it from "./locales/it/translation.json";
 
+if (localStorage.getItem("i18nextLng") === null) {
+  localStorage.setItem("i18nextLng", "it");
+}
+
 i18n
     .use(initReactI18next)
     .use(LanguageDetector)

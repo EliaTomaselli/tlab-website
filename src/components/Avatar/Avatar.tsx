@@ -9,7 +9,7 @@ type AvatarProps = {
 function Avatar(props: AvatarProps) {
 	return (
 		<div className={clsx(styles.Avatar, props.className)}>
-			<img className={styles.image} src="/images/stick-man.png" alt="Image of an avatar" />
+			<img className={styles.image} src="/tlab-website/images/stick-man.png" alt="Image of an avatar" />
 		</div>
 	);
 }

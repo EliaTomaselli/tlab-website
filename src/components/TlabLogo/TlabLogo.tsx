@@ -1,5 +1,6 @@
 import styles from "./TlabLogo.module.css";
 
+import { Link } from "react-router-dom";
 import clsx from "clsx";
 
 type TlabLogoProps = {
@@ -8,10 +9,10 @@ type TlabLogoProps = {
 
 function TlabLogo(props: TlabLogoProps) {
 	return (
-		<div className={clsx(styles.TlabLogo, props.className)}>
+		<Link className={clsx(styles.TlabLogo, props.className)} to={"/tlab-website"}>
       T-LAB
 			{/* <img src="/tlab-logo.svg" alt="Tlab Logo" /> */}
-		</div>
+		</Link>
 	);
 }
 

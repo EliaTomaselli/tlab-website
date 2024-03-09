@@ -61,7 +61,6 @@ class LanguageSelector extends React.Component<LanguageSelectorProps, LanguageSe
 	}
 
 	onOptionClickHandler(locale: Locale) {
-    console.log("onOptionClickHandler")
 		this.props.onLocaleChange(locale);
 		this.setState({
 			isOpen: false,

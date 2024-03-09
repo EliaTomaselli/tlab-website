@@ -1,8 +1,10 @@
 import styles from "./TopBar.module.css";
 
-import LanguageSelector, { Locale } from "../LanguageSelector/LanguageSelector";
 import { useTranslation } from "react-i18next";
+
 import TlabLogo from "../TlabLogo/TlabLogo";
+import TtsButton from "../TtsButton/TtsButton";
+import LanguageSelector, { Locale } from "../LanguageSelector/LanguageSelector";
 
 function TopBar() {
 	const { i18n } = useTranslation();
@@ -12,13 +14,16 @@ function TopBar() {
 
 	return (
 		<div className={styles.TopBar}>
-      <TlabLogo />
-			<LanguageSelector
-				className={styles.LanguageSelector}
-				selectedLocale={selectedLocale}
-				locales={locales}
-				onLocaleChange={(locale) => i18n.changeLanguage(locale)}
-			></LanguageSelector>
+			<TlabLogo />
+			<div className={styles.leftTopBar}>
+				<TtsButton />
+				<LanguageSelector
+					className={styles.LanguageSelector}
+					selectedLocale={selectedLocale}
+					locales={locales}
+					onLocaleChange={(locale) => i18n.changeLanguage(locale)}
+				></LanguageSelector>
+			</div>
 		</div>
 	);
 }

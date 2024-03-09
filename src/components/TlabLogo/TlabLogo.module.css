@@ -1,7 +1,12 @@
 .TlabLogo {
-	width: 60px;
+  display: inline-block;
+
 	height: 30px;
   line-height: 30px;
+
+  color: var(--black1);
+  font-size: var(--font-size-xxlarge);
   text-align: center;
   font-weight: bold;
+  text-decoration: none;
 }
