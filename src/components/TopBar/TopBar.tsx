@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import TlabLogo from "../TlabLogo/TlabLogo";
 import TtsButton from "../TtsButton/TtsButton";
 import LanguageSelector, { Locale } from "../LanguageSelector/LanguageSelector";
+import TopBarLink from "../TopBarLink/TopBarLink";
 
 function TopBar() {
 	const { i18n } = useTranslation();
@@ -14,7 +15,10 @@ function TopBar() {
 
 	return (
 		<div className={styles.TopBar}>
-			<TlabLogo />
+			<div className={styles.rightTopBar}>
+				<TlabLogo />
+				<TopBarLink text={"Contatti"} to="contacts" />
+			</div>
 			<div className={styles.leftTopBar}>
 				<TtsButton />
 				<LanguageSelector

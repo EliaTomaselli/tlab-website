@@ -1,11 +1,4 @@
-.Events {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-  flex-direction: column;
-  
+.Events {  
   padding: 20px;
-
-  background-color: var(--black3);
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  /* font-family: "Comic Sans MS", cursive, sans-serif; */
 }

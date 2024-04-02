@@ -1,4 +1,5 @@
 :root {
+  /* Colors */
 	--black1: #000;
 	--black2: #111;
 	--black3: #222;
@@ -14,14 +15,23 @@
 	--white3: #ccc;
 	--white4: #ddd;
 	--white5: #eee;
+  --blue1: #08f;
+  --blue2: #07e;
+  --blue3: #06d;
+  --blue4: #05c;
+  --blue5: #04b;
 
-	--font-size-small: 12px;
-	--font-size-medium: 14px;
-	--font-size-large: 16px;
-	--font-size-xlarge: 18px;
-	--font-size-xxlarge: 22px;
-	--font-size-xxxlarge: 26px;
+  /* Fonts */
+	--font-size-xxsmall: 12px;
+	--font-size-xsmall: 14px;
+	--font-size-small: 16px;
+	--font-size-medium: 18px;
+	--font-size-large: 22px;
+	--font-size-xlarge: 26px;
+	--font-size-xxlarge: 30px;
+	--font-size-xxxlarge: 34px;
 
+  /* Layout */
 	--top-bar-height: 60px;
 	--footer-height: 90px;
 }
@@ -43,7 +53,7 @@ html {
 body {
 	display: flex;
 	flex: 1;
-  background-color: var(--white5);
+	background-color: var(--white5);
 }
 
 #root {
@@ -54,4 +64,8 @@ body {
 #root {
 	height: 100%;
   min-height: 100%;
+} */
+
+/* .ck.ck-editor__editable {
+  min-height: 200px;
 } */

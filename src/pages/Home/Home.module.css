@@ -29,18 +29,3 @@
 
 	transform: translate(-50%, -50%);
 }
-
-.link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--black3);
-  color: var(--white5);
-  font-size: var(--font-size-medium);
-  cursor: pointer;
-}

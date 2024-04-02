@@ -1,12 +1,15 @@
 import styles from "./Events.module.css";
-import "rsuite/Calendar/styles/index.css";
 
-import { Calendar } from "rsuite";
+import { useTranslation } from "react-i18next";
+
+import Calendar from "../../components/Calendar/Calendar";
 
 function Events() {
+	const { i18n } = useTranslation();
+
 	return (
 		<main className={styles.Events}>
-			<Calendar bordered={true} />
+      <Calendar locale={i18n.language}/>
 		</main>
 	);
 }
