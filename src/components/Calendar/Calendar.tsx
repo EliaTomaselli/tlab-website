@@ -1,15 +1,23 @@
 import styles from "./Calendar.module.css";
 
 import React from "react";
-import { DateTime, Info } from "luxon";
+import { DateTime } from "luxon";
 import clsx from "clsx";
 
 import translations from "./translations.json";
 import Arrow from "../Arrow/Arrow";
+import EventBullet from "../EventBullet/EventBullet";
+
+export type CalendarEvent = {
+	title: string;
+	category: string;
+	date: DateTime;
+};
 
 type CalendarProps = {
 	locale: string;
-	events: object[];
+	events: CalendarEvent[];
+	className?: string;
 };
 
 type CalendarState = {
@@ -18,6 +26,7 @@ type CalendarState = {
 
 class Calendar extends React.Component<CalendarProps, CalendarState> {
 	// Time to use to initialize the calendar
+	// And to keep track of today when the user clicks on the "today" button
 	private now: DateTime = DateTime.now();
 
 	constructor(props: CalendarProps) {
@@ -50,16 +59,38 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 		}
 	}
 
+	private sortCalendarEventsByDate(calendarEvents: CalendarEvent[]): CalendarEvent[] {
+		return calendarEvents.sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+	}
+
 	render() {
 		const locale = this.props.locale as keyof typeof translations;
 
 		const start = this.state.date.setLocale(locale).startOf("month").startOf("week", { useLocaleWeeks: true });
-    const end = this.state.date.setLocale(locale).endOf("month").endOf("week", { useLocaleWeeks: true });
+		const end = this.state.date.setLocale(locale).endOf("month").endOf("week", { useLocaleWeeks: true });
+
+		let calendarEvents = this.sortCalendarEventsByDate([...this.props.events]);
+		calendarEvents = calendarEvents.filter((event) => event.date >= start && event.date <= end);
+
+		// Index used to keep track of the current event that is being navigated in the calendarEvents array
+		let currentEventIndex = 0;
 
 		const weekElements = [];
 		for (let date = start, index = 0; date.startOf("day") <= end.startOf("day"); index++) {
 			const dayElements = [];
 			for (let i = 0; i < 7; i++) {
+				
+        const eventsOfTheDay = [];
+				for (; currentEventIndex < calendarEvents.length; currentEventIndex++) {
+					if (calendarEvents[currentEventIndex].date.startOf("day") <= date.startOf("day")) {
+						eventsOfTheDay.push(calendarEvents[currentEventIndex]);
+            console.log(eventsOfTheDay);
+            console.log(i);
+					} else {
+						break;
+					}
+				}
+
 				dayElements.push(
 					<li
 						key={date.day}
@@ -69,6 +100,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 						})}
 					>
 						{date.day}
+            {eventsOfTheDay.length !== 0 && <div className={styles.events}>{eventsOfTheDay.map((event, index) => <EventBullet key={index} color="#ff0" title={event.title} />)}</div>}
 					</li>
 				);
 
@@ -84,11 +116,15 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 
 		const weekdayElements = [];
 		for (let date = start, i = 0; i < 7; date = date.plus({ day: 1 }), i++) {
-			weekdayElements.push(<li key={i} className={styles.weekDay}>{date.weekdayShort}</li>);
+			weekdayElements.push(
+				<li key={i} className={styles.weekday}>
+					{date.weekdayShort}
+				</li>
+			);
 		}
 
 		return (
-			<div className={styles.Calendar}>
+			<div className={clsx(styles.Calendar, this.props.className)}>
 				<div className={styles.calendarViewNavigator}>
 					<div className={styles.nextAndPrevContainer}>
 						<button className={styles.prevButton} onClick={() => this.onCalendarViewChange("previous")}>
@@ -106,7 +142,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 					</button>
 				</div>
 				<ul className={styles.calendarView}>
-					<ul className={styles.weekDays}>{weekdayElements}</ul>
+					<ul className={styles.weekdays}>{weekdayElements}</ul>
 					<ul className={styles.daysTable}>{weekElements}</ul>
 				</ul>
 			</div>
