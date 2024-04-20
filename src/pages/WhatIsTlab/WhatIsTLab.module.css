@@ -1,5 +1,7 @@
 .WhatIsTLab {
 	padding: 40px;
+  /* color: var(--white5); */
+  /* color: var(--black1); */
 }
 
 .title {
@@ -8,10 +10,10 @@
 }
 
 .description {
+  margin-top: 1rem;
   padding-right: 60px;
   padding-left: 60px;
 
   font-size: var(--font-size-medium);
   font-weight: 400;
-  margin-top: 1rem;
 }

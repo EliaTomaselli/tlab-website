@@ -1,25 +1,47 @@
 .HomeLink {
+	position: relative;
+
+	/* Image is 235 x 150 */
+	width: 185px;
+	height: 140px;
+	border-radius: 50%;
+
+	transition: transform 0.2s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.frame {
+  position: absolute;
+	top: -5px;
+  left: -25px;
+	
+  pointer-events: none;
+}
+
+.link {
 	display: inline-flex;
-  justify-content: center;
-  align-items: center;
+	justify-content: center;
+	align-items: center;
   
-	background-image: url("/tlab-website/images/cornice-ovale.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; /* or 'contain' */
-  /* image-rendering: pixelated; */
+  width: 100%;
+	height: 100%;
+  padding: 0 20px;
+  border-radius: 50%;
 
-  /* Image is 235 x 150 */
-  width: 235px;
-  height: 150px;
-  padding: 10px;
-
-	font-size: var(--font-size-medium);
 	text-align: center;
+  font-size: var(--font-size-large);
+  color: var(--black3);
+  font-weight: bold;
+  text-decoration: none;
 
-  transition: transform 0.2s;
+  background-color: var(--white1);
+
+  transition: background-color 0.2s;
 
   &:hover {
-    transform: scale(1.1);
+    background-color: var(--white3);
   }
 }

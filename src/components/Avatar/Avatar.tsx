@@ -11,7 +11,7 @@ function Avatar(props: AvatarProps) {
 	return (
 		<img
 			className={clsx(styles.Avatar, props.className)}
-			src="/tlab-website/images/stick-man.png"
+			src="/tlab-website/images/uomo-con-bacchetta-lunga.png"
 			alt={props.alt}
 		/>
 	);

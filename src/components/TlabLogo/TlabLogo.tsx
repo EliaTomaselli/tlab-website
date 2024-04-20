@@ -9,7 +9,7 @@ type TlabLogoProps = {
 
 function TlabLogo(props: TlabLogoProps) {
 	return (
-		<Link className={clsx(styles.TlabLogo, props.className)} to={"/tlab-website"}>
+		<Link className={clsx(styles.TlabLogo, props.className)} to={"/tlab-website/"}>
       T-LAB
 			{/* <img src="/tlab-logo.svg" alt="Tlab Logo" /> */}
 		</Link>

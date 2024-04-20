@@ -13,18 +13,14 @@ function Home() {
 	return (
 		<main className={styles.Home}>
 			{/* <SpeechBubble className={styles.SpeechBubble} text={t("title")} /> */}
-			<Avatar className={styles.Avatar} alt={t("avatar")}/>
+			<Avatar className={styles.Avatar} alt={t("avatar")} />
 			<div className={styles.links}>
-				<div className={styles.leftLinks}>
-					<HomeLink to="what-is-tlab" text={t("Cos'è il T-Lab")} />
-					<HomeLink to="what-to-see" text={t("Luoghi d'interesse")} />
-					<HomeLink to="paths" text={t("Mappa percorsi")} />
-				</div>
-				<div className={styles.rightLinks}>
-					<HomeLink to="events" text={t("Eventi")} />
-					<HomeLink to="where-to-eat" text={t("Accoglienza")} />
-					<HomeLink to="where-to-eat" text={t("Prodotti del territorio")} />
-				</div>
+				<HomeLink to="what-is-tlab" text={t("Cos'è il T-Lab")} />
+				<HomeLink to="what-to-see" text={t("Luoghi d'interesse")} />
+				<HomeLink to="paths" text={t("Mappa percorsi")} />
+				<HomeLink to="events" text={t("Eventi")} />
+				<HomeLink to="where-to-eat" text={t("Accoglienza")} />
+				<HomeLink to="where-to-eat" text={t("Prodotti del territorio")} />
 			</div>
 		</main>
 	);
