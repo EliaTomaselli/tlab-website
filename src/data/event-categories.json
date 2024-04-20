@@ -1,0 +1,17 @@
+{
+  "cinema": {
+    "color": "#FF0000"
+  },
+  "teatro": {
+    "color": "#00FF00"
+  },
+  "passeggiate": {
+    "color": "#0000FF"
+  },
+  "conferenze": {
+    "color": "#FFFF00"
+  },
+  "laboratori": {
+    "color": "#FF00FF"
+  }
+}

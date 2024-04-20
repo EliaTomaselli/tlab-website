@@ -27,7 +27,6 @@ function AppRoutes() {
 					<Route path="events" element={<Events />} />
 					<Route path="contacts" element={<Contacts />} />
 					<Route path="what-is-tlab" element={<WhatIsTLab />} />
-					<Route path="editor" element={<Editor />} />
 					<Route path="*" element={<Error404 />} />
 				</Route>
 			</Routes>

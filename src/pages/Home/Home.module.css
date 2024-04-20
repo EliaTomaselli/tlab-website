@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .SpeechBubble {
@@ -12,20 +12,29 @@
 }
 
 .Avatar {
-	width: 70%;
-	height: 70%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .links {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
 
-	position: absolute;
-	top: 50%;
-	right: 20%;
+.leftLinks {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-	transform: translate(-50%, -50%);
+.rightLinks {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

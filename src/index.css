@@ -1,5 +1,5 @@
 :root {
-  /* Colors */
+	/* Colors */
 	--black1: #000;
 	--black2: #111;
 	--black3: #222;
@@ -15,13 +15,16 @@
 	--white3: #ccc;
 	--white4: #ddd;
 	--white5: #eee;
-  --blue1: #08f;
-  --blue2: #07e;
-  --blue3: #06d;
-  --blue4: #05c;
-  --blue5: #04b;
+	--blue1: #08f;
+	--blue2: #07e;
+	--blue3: #06d;
+	--blue4: #05c;
+	--blue5: #04b;
 
-  /* Fonts */
+	/* Fonts */
+	--font-book-antiqua: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+  --font-roboto: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 	--font-size-xxsmall: 12px;
 	--font-size-xsmall: 14px;
 	--font-size-small: 16px;
@@ -31,7 +34,7 @@
 	--font-size-xxlarge: 30px;
 	--font-size-xxxlarge: 34px;
 
-  /* Layout */
+	/* Layout */
 	--top-bar-height: 60px;
 	--footer-height: 90px;
 }
@@ -46,6 +49,7 @@
 }
 
 html {
+  font-family: var(--font-book-antiqua);
 	display: flex;
 	min-height: 100%;
 }

@@ -1,6 +1,6 @@
 .Events {  
-  display: flex;
-  gap: 20px;
-    
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;    
   padding: 20px;
 }

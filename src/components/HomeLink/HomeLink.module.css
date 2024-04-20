@@ -1,46 +1,25 @@
 .HomeLink {
-	display: block;
-
-	width: 200px;
-	padding: 10px;
-	border: 3px solid var(--gray3);
-	border-radius: 10px;
-
-	background-color: var(--black3);
+	display: inline-flex;
+  justify-content: center;
+  align-items: center;
   
-	color: #fff;
-  font-style: bold;
+	background-image: url("/tlab-website/images/cornice-ovale.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* or 'contain' */
+  /* image-rendering: pixelated; */
+
+  /* Image is 235 x 150 */
+  width: 235px;
+  height: 150px;
+  padding: 10px;
+
 	font-size: var(--font-size-medium);
 	text-align: center;
-	text-decoration: none;
 
-	transition: color 0.15s, background-color 0.15s, border-color 0.15s;
-}
+  transition: transform 0.2s;
 
-.underlineFromCenter {
-	display: inline-block;
-	transform: perspective(1px) translateZ(0);
-	position: relative;
-	overflow: hidden;
-}
-
-.underlineFromCenter:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	left: 51%;
-	right: 51%;
-	bottom: 0;
-	background: linear-gradient(to top, var(--blue1) 0%, var(--blue1) 100%);
-	height: 4px;
-	transition-property: left, right;
-	transition-duration: 0.3s;
-	transition-timing-function: ease-out;
-}
-
-.underlineFromCenter:hover:before,
-.underlineFromCenter:focus:before,
-.underlineFromCenter:active:before {
-	left: 0;
-	right: 0;
+  &:hover {
+    transform: scale(1.1);
+  }
 }

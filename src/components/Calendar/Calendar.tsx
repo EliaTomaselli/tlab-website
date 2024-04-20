@@ -12,6 +12,7 @@ export type CalendarEvent = {
 	title: string;
 	category: string;
 	date: DateTime;
+  color: string;
 };
 
 type CalendarProps = {
@@ -84,8 +85,6 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 				for (; currentEventIndex < calendarEvents.length; currentEventIndex++) {
 					if (calendarEvents[currentEventIndex].date.startOf("day") <= date.startOf("day")) {
 						eventsOfTheDay.push(calendarEvents[currentEventIndex]);
-            console.log(eventsOfTheDay);
-            console.log(i);
 					} else {
 						break;
 					}
@@ -100,7 +99,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 						})}
 					>
 						{date.day}
-            {eventsOfTheDay.length !== 0 && <div className={styles.events}>{eventsOfTheDay.map((event, index) => <EventBullet key={index} color="#ff0" title={event.title} />)}</div>}
+            {eventsOfTheDay.length !== 0 && <div className={styles.events}>{eventsOfTheDay.map((event, index) => <EventBullet key={index} color={event.color} title={event.title} />)}</div>}
 					</li>
 				);
 

@@ -1,0 +1,23 @@
+[
+  {
+    "category": "teatro",
+    "name": "Teatro di Castello Tesino",
+    "start": "2024-04-15T21:00:00.000Z",
+    "end": "2024-04-15T23:00:00.000Z",
+    "description": "Il Teatro di Castello Tesino è un teatro situato a Castello Tesino, in provincia di Trento. È stato inaugurato nel 2006 e ha una capienza di 200 posti a sedere."
+  },
+  {
+    "category": "teatro",
+    "name": "Teatro di Pieve Tesino",
+    "start": "2024-04-16T21:00:00.000Z",
+    "end": "2024-04-16T23:00:00.000Z",
+    "description": "Il Teatro di Pieve Tesino è un teatro situato a Pieve Tesino, in provincia di Trento. È stato inaugurato nel 2006 e ha una capienza di 200 posti a sedere."
+  },
+  {
+    "category": "passeggiate",
+    "name": "Passeggiata al lago di Levico",
+    "start": "2024-04-15T09:00:00.000Z",
+    "end": "2024-04-15T12:00:00.000Z",
+    "description": "Passeggiata al lago di Levico, in Trentino, con guida esperta."
+  }
+]

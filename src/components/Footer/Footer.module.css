@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
   
-	font-family: "Roboto", sans-serif;
+	font-family: var(--font-roboto);
 	font-size: var(--font-size-small);
 	text-align: center;
 	letter-spacing: 1px;
