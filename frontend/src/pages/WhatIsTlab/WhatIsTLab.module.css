@@ -1,0 +1,37 @@
+.WhatIsTLab {
+  display: grid;
+  grid-template-columns: 350px 40px 1fr;
+  justify-items: center;
+  align-items: center;
+	/* color: var(--white5); */
+	/* color: var(--black1); */
+	color: var(--white5);
+  font-size: var(--font-size-xlarge);
+}
+
+.content {
+  padding: 40px;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.logoPlaceholder {
+  margin-left: 300px;
+  width: 600px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--black1);
+}
+
+.description {
+	margin-top: 60px;
+	padding-right: 60px;
+	padding-left: 60px;
+
+	font-size: var(--font-size-xxxlarge);
+  text-align: justify;
+}

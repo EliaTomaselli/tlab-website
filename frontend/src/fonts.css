@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "Book Antiqua";
+	src: url("/tlab-website/fonts/Book-Antiqua.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("/tlab-website/fonts/Roboto.ttf") format("truetype");
+}

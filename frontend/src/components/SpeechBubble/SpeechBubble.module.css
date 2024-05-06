@@ -1,0 +1,43 @@
+.SpeechBubble {	  
+  position: relative;
+
+  border: solid 2px #000;
+	border-radius: 12px;
+	background-color: #fff;
+	padding: 0.5em 1em;
+	margin: 0.5em;
+}
+
+.SpeechBubble:before {
+	content: "";
+	
+	position: absolute;
+	left: 24px;
+	bottom: -24px;
+
+	width: 0;
+	height: 0;
+  
+  border: solid 12px transparent;
+	border-left: solid 12px #000;
+	border-top: solid 12px #000;
+  
+	transform: skew(-15deg);
+}
+
+.SpeechBubble:after {
+	content: "";
+
+	position: absolute;
+	bottom: -19px;
+	left: 27px;
+
+	width: 0;
+	height: 0;
+  
+  border: solid 10px transparent;
+	border-left: solid 10px #fff;
+	border-top: solid 10px #fff;
+
+	transform: skew(-15deg);
+}

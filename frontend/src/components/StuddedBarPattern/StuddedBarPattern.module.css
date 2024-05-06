@@ -1,0 +1,9 @@
+.StuddedBarPattern {
+	/*
+  Hidding SVG affects other SVG styles in the same page if you hide it with display: none.
+  Use width: 0; height: 0; instead. This way the defs defined in the svg will be available
+  to other SVGs in the same page.
+  */
+	width: 0;
+	height: 0;
+}

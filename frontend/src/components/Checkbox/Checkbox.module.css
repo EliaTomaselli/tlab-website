@@ -1,0 +1,43 @@
+.Checkbox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 16px;
+	width: 16px;
+
+	border: 2px solid var(--black1);
+	border-radius: 2px;
+
+	line-height: 0;
+	vertical-align: text-top;
+
+	opacity: 0.7;
+
+	/* Hide the default checkbox */
+	/* Otherwise it's not possible to apply a background color */
+	-webkit-appearance: none;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&:checked {
+    opacity: 1;
+		background-color: var(--black1);
+
+		&:before {
+			content: "";
+
+			width: 5px;
+			height: 9px;
+
+			border: solid var(--white5);
+			border-width: 0 2px 2px 0;
+			margin: -1px -1px 0 -1px;
+
+			transform: translateY(-0.5px) rotate(45deg);
+		}
+	}
+}

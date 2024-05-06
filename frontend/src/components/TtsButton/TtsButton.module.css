@@ -1,0 +1,26 @@
+.TtsButton {
+  
+  display: inline-block;
+  height: 100%;
+  
+  padding: 10px;
+  
+  text-align: center;
+	text-decoration: none;
+  user-select: none;
+
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: var(--white5);
+
+	background-color: #0000;
+	color: var(--white5);
+	
+  cursor: pointer;
+
+  transition: color 0.25s;
+
+  &:hover {
+    color: var(--black1);
+  }
+}

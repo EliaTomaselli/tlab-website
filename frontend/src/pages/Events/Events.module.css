@@ -1,0 +1,41 @@
+.Events {
+	display: grid;
+	grid-template-columns: 1fr 0.8fr 2.2fr;
+}
+
+.left {
+	display: grid;
+  grid-template-rows: 300px 40px 1fr;
+}
+
+.EventsList {
+	width: 100%;
+	height: 300px;
+}
+
+.monthlyCalendar {
+  height: 100%;
+  width: 100%;
+}
+
+.barContainer {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+
+	& .studdedBar {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	& .uomoConGiornale {
+    position: absolute;
+    left: -35px;
+		pointer-events: none;
+    user-select: none;
+	}
+}

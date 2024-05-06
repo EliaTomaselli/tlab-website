@@ -1,0 +1,23 @@
+.TopBarLink {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	padding: 10px 10px;
+  border-width: 0 1px 0 1px;
+	border-style: solid;
+  border-color: var(--white5);
+
+  color: var(--white5);
+	font-size: var(--font-size-xlarge);
+	font-weight: bold;
+	text-decoration: none;
+
+	/* transition: background-color 0.15s; */
+	transition: color 0.25s;
+
+	&:hover {
+    color: var(--black1);
+	}
+}

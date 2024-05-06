@@ -1,0 +1,14 @@
+.TlabLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+	height: 100%;
+  padding: 20px 40px;
+
+  color: var(--white5);
+  font-size: var(--font-size-large);
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+}

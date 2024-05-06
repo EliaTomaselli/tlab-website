@@ -1,0 +1,46 @@
+:root {
+	--frame-size: 40px;
+	--half-frame-size: calc(var(--frame-size) / 2);
+	--frame-image: url("/tlab-website/public/images/fascia.png");
+}
+
+.CortenFrame {
+	width: 100%;
+	height: 100%;
+
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+
+	display: grid;
+	grid-template-areas:
+		"top top top"
+		"left content right"
+		"bottom bottom bottom";
+	grid-template-columns: var(--frame-size) 1fr var(--frame-size);
+	grid-template-rows: var(--frame-size) 1fr var(--frame-size);
+}
+
+.topFrame {
+	grid-area: top;
+}
+
+.leftFrame {
+	grid-area: left;
+}
+
+.rightFrame {
+	grid-area: right;
+}
+
+.bottomFrame {
+	grid-area: bottom;
+}
+
+.content {
+	grid-area: content;
+
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
