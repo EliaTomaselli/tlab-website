@@ -1,11 +1,11 @@
 import styles from "./EventDescription.module.css";
 
 type EventDescriptionProps = {
-  event:any;
+	event: string;
 };
 
 function EventDescription(props: EventDescriptionProps) {
-  const { event } = props;
+	const { event } = props;
 	return (
 		<div className={styles.EventDescription}>
 			<h2>Event Title</h2>
