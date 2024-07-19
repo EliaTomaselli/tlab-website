@@ -67,8 +67,8 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 	render() {
 		const locale = this.props.locale as keyof typeof translations;
 
-		const start = this.state.date.setLocale(locale).startOf("month").startOf("week", { useLocaleWeeks: true });
-		const end = this.state.date.setLocale(locale).endOf("month").endOf("week", { useLocaleWeeks: true });
+		const start = this.state.date.setLocale(locale).startOf("week", { useLocaleWeeks: true });
+		const end = this.state.date.setLocale(locale).endOf("week", { useLocaleWeeks: true });
 
 		let calendarEvents = this.sortCalendarEventsByDate([...this.props.events]);
 		calendarEvents = calendarEvents.filter((event) => event.date >= start && event.date <= end);
@@ -76,46 +76,37 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 		// Index used to keep track of the current event that is being navigated in the calendarEvents array
 		let currentEventIndex = 0;
 
-		const weekElements = [];
+		const dayElements = [];
 		for (let date = start, index = 0; date.startOf("day") <= end.startOf("day"); index++) {
-			const dayElements = [];
-			for (let i = 0; i < 7; i++) {
-				const eventsOfTheDay = [];
-				for (; currentEventIndex < calendarEvents.length; currentEventIndex++) {
-					if (calendarEvents[currentEventIndex].date.startOf("day") <= date.startOf("day")) {
-						eventsOfTheDay.push(calendarEvents[currentEventIndex]);
-					} else {
-						break;
-					}
+			const eventsOfTheDay = [];
+			for (; currentEventIndex < calendarEvents.length; currentEventIndex++) {
+				if (calendarEvents[currentEventIndex].date.startOf("day") <= date.startOf("day")) {
+					eventsOfTheDay.push(calendarEvents[currentEventIndex]);
+				} else {
+					break;
 				}
-
-				dayElements.push(
-					<li
-						key={date.day}
-						className={clsx({
-							[styles.day]: true,
-							[styles.isInMonth]: date.month === this.state.date.month,
-						})}
-					>
-						{date.day}
-						{eventsOfTheDay.length !== 0 && (
-							<div className={styles.events}>
-								{eventsOfTheDay.map((event, index) => (
-									<EventBullet key={index} color={event.color} title={event.title} />
-								))}
-							</div>
-						)}
-					</li>
-				);
-
-				date = date.plus({ days: 1 });
 			}
 
-			weekElements.push(
-				<ul key={index} className={styles.daysRow}>
-					{dayElements}
-				</ul>
+			dayElements.push(
+				<li
+					key={date.day}
+					className={clsx({
+						[styles.day]: true,
+						[styles.isInMonth]: date.month === this.state.date.month,
+					})}
+				>
+					{date.day}
+					{eventsOfTheDay.length !== 0 && (
+						<div className={styles.events}>
+							{eventsOfTheDay.map((event, index) => (
+								<EventBullet key={index} color={event.color} title={event.title} />
+							))}
+						</div>
+					)}
+				</li>
 			);
+
+			date = date.plus({ days: 1 });
 		}
 
 		const weekdayElements = [];
@@ -147,7 +138,7 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 				</div>
 				<ul className={styles.calendarView}>
 					<ul className={styles.weekdays}>{weekdayElements}</ul>
-					<ul className={styles.daysTable}>{weekElements}</ul>
+					<ul className={styles.days}>{dayElements}</ul>
 				</ul>
 			</div>
 		);

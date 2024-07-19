@@ -1,7 +1,7 @@
 .MonthlyCalendar {
 	display: grid;
-  grid-template-rows: 50px 1fr;
-  
+	grid-template-rows: 50px 1fr;
+
 	font-size: var(--font-size-large);
 }
 
@@ -11,7 +11,7 @@
 	justify-content: space-between;
 
 	width: 100%;
-  padding: 0 10px;
+	padding: 0 10px;
 
 	background-color: rgba(0, 0, 0, 0.4);
 }
@@ -32,7 +32,7 @@
 	border: none;
 	border-radius: 5px;
 
-  color: var(--white5);
+	color: var(--white5);
 	font-weight: bold;
 	background-color: rgba(0, 0, 0, 0.5);
 
@@ -55,8 +55,27 @@
 	cursor: pointer;
 }
 
-.arrow {
+.nextButtonArrowContainer {
+	position: relative;
+	right: 2px;
+}
+
+.prevButtonArrowContainer {
+}
+
+.nextArrow,
+.prevArrow {
 	border-color: var(--white5);
+}
+
+.nextArrow {
+  position: relative;
+  right: 2px;
+}
+
+.prevArrow {
+  position: relative;
+  left: 2px;
 }
 
 .currentYearAndMonth {
@@ -73,18 +92,18 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  gap: 1px;
+	gap: 1px;
 }
 
 .weekdays {
-  flex: 1;
-  
+	flex: 1;
+
 	display: flex;
 	justify-content: space-between;
 	list-style: none;
 
 	width: 100%;
-  
+
 	background-color: rgba(0, 0, 0, 0.4);
 }
 .weekday {
@@ -100,7 +119,7 @@
 }
 
 .daysRow {
-  flex: 1;
+	flex: 1;
 
 	display: flex;
 	justify-content: space-around;

@@ -1,6 +1,6 @@
 .Events {
 	display: grid;
-	grid-template-columns: 1fr 0.8fr 2.2fr;
+	grid-template-columns: 2fr 40px 1fr 4fr;
 }
 
 .left {
@@ -19,6 +19,8 @@
 }
 
 .barContainer {
+  grid-column: span 2;
+
 	position: relative;
 	display: flex;
 	justify-content: center;

@@ -26,27 +26,3 @@
 	white-space: nowrap;
 	overflow: hidden;
 }
-
-.event {
-	display: flex;
-	gap: 10px;
-	align-items: center;
-}
-
-.eventName {
-	font-size: var(--font-size-xlarge);
-	font-weight: bold;
-}
-
-.eventCount {
-	font-size: var(--font-size-xlarge);
-	font-weight: normal;
-}
-
-.eventColor {
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background-color: purple;
-}

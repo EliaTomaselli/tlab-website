@@ -1,21 +1,16 @@
 .Home {
 	display: grid;
-  grid-template-columns: 1fr 40px 3fr;
+  grid-template-columns: 1fr 40px 4fr;
 	align-items: center;
 	justify-content: space-evenly;
 	flex-direction: row;
-}
-
-.Avatar {
-	flex: 1 1 auto;
-	max-width: calc(800px * 0.6);
-	max-height: calc(1040px * 0.6);
 }
 
 .links {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
+  justify-items: center;
 	row-gap: 40px;
   column-gap: 70px;
 }

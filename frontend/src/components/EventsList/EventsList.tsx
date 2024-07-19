@@ -1,5 +1,6 @@
 import styles from "./EventsList.module.css";
 
+import { useState } from "react";
 import clsx from "clsx";
 
 import categories from "../../data/event-categories.json";
@@ -29,17 +30,14 @@ function getEventCount(category: keyof typeof categories): number {
 }
 
 function EventsList(props: EventsListProps) {
+	const [selectedCategories, setSelectedCategories] = useState<string[]>([...Object.keys(categories)]);
+
 	const eventElements: JSX.Element[] = [];
 
 	// TODO Usare memoization per evitare di calcolare getEventCount e getEventColor ad ogni render
 	for (const category in categories) {
 		eventElements.push(
-			<li key={category} className={styles.event}>
-				<Checkbox checked={true} onChange={() => {}} />
-        <EventBullet color={getEventColor(category as keyof typeof categories)} title={category} />
-				<span className={styles.eventName}>{category} </span>
-				<span className={styles.eventCount}>({getEventCount(category as keyof typeof categories)}) </span>
-			</li>
+			
 		);
 	}
 

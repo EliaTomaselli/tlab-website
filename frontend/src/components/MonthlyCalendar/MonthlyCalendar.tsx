@@ -133,13 +133,13 @@ class MonthlyCalendar extends React.Component<MonthlyCalendarProps, MonthlyCalen
 				<div className={styles.calendarViewNavigator}>
 					<div className={styles.nextAndPrevContainer}>
 						<button className={styles.prevButton} onClick={() => this.onCalendarViewChange("previous")}>
-							<Arrow className={styles.arrow} direction="left" length={5} width={4} />
+							<Arrow className={styles.prevArrow} direction="left" length={5} width={4} />
 						</button>
 						<span className={styles.currentYearAndMonth}>
 							{this.state.date.toLocaleString({ month: "short", year: "numeric" })}
 						</span>
 						<button className={styles.nextButton} onClick={() => this.onCalendarViewChange("next")}>
-							<Arrow className={styles.arrow} direction="right" length={5} width={4} />
+							<Arrow className={styles.nextArrow} direction="right" length={5} width={4} />
 						</button>
 					</div>
 					<button className={styles.todayButton} onClick={() => this.onCalendarViewChange("today")}>
@@ -148,7 +148,7 @@ class MonthlyCalendar extends React.Component<MonthlyCalendarProps, MonthlyCalen
 				</div>
 				<ul className={styles.calendarView}>
 					<ul className={styles.weekdays}>{weekdayElements}</ul>
-          {weekElements}
+					{weekElements}
 				</ul>
 			</div>
 		);
