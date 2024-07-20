@@ -2,7 +2,8 @@ import styles from "./Home.module.css";
 
 import { useTranslation } from "react-i18next";
 
-import Avatar from "../../components/Avatar/Avatar";
+import MaleAvatar from "../../components/MaleAvatar/MaleAvatar";
+import FemaleAvatar from "../../components/FemaleAvatar/FemaleAvatar";
 import FramedLink from "../../components/FramedLink/FramedLink";
 import StuddedBar from "../../components/StuddedBar/StuddedBar";
 
@@ -11,8 +12,7 @@ function Home() {
 
 	return (
 		<main className={styles.Home}>
-			{/* <SpeechBubble className={styles.SpeechBubble} text={t("title")} /> */}
-			<Avatar className={styles.Avatar} alt={t("avatar")} />
+			<MaleAvatar className={styles.MaleAvatar} alt={t("avatar")} />
       <StuddedBar direction="v" />
 			<div className={styles.links}>
 				<FramedLink to="what-is-tlab" text={t("Cos'è il T-Lab")} />
@@ -22,6 +22,7 @@ function Home() {
 				<FramedLink to="hospitality" text={t("Accoglienza")} />
 				<FramedLink to="products" text={t("Prodotti del territorio")} />
 			</div>
+			<FemaleAvatar className={styles.FemaleAvatar} alt={t("avatar")} />
 		</main>
 	);
 }

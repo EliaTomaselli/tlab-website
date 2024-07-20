@@ -3,8 +3,7 @@
 	flex-direction: column;
 	min-height: 100vh;
   
-	background-image: url("/tlab-website/images/corten.jpg");
-	background-repeat: repeat;
+  background-color: var(--bg-color);
 	/* background-size: 450px 600px; */
 }
 

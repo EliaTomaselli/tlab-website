@@ -58,7 +58,8 @@
 .calendarView {
   flex: 1;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 50px 1fr;
   flex-direction: row;
   align-items: center;
 
@@ -70,8 +71,6 @@
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
-
-  width: 30%;
 }
 
 .weekday {
@@ -85,10 +84,6 @@
   border-radius: 5px;
 
   color: var(--white4);
-}
-
-.days {
-  width: 70%;
 }
 
 .day {

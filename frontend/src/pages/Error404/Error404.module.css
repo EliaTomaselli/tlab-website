@@ -1,11 +1,12 @@
 .Error404 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 40px;
   
   color: var(--black1);
-  font-size: 2rem;
+  font-size: var(--font-size-xxlarge);
   font-weight: bold;
   text-align: center;
 }

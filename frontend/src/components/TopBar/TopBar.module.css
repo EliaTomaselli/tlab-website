@@ -10,6 +10,9 @@
 
 	z-index: 1000;
 	user-select: none;
+
+  background-image: url("/tlab-website/images/corten.jpg");
+	background-repeat: repeat;
 }
 
 .rightTopBar {

@@ -21,6 +21,19 @@
 	--blue4: #05c;
 	--blue5: #04b;
 
+  /* Palette colors */
+  --bg-color: #007981;
+  /*
+  Foglie                  #9CAA13
+  Venature foglie         #8BB893
+  Dorso foglie            #86AF85
+  Interno bacche          #E84E0F
+  Contorno bacche chiaro  #F07F3C
+  Contorno bacche scuro   #C54409
+  Bordo rametti           #7263A9
+  Riempimento rametti	    #ABA3CC
+  */
+
 	/* Fonts */
 	--font-book-antiqua: "Book Antiqua", serif;
 	--font-roboto: "Roboto", sans-serif;

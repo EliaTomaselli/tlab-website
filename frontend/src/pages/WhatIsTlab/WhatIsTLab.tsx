@@ -5,7 +5,7 @@ import StuddedBar from "../../components/StuddedBar/StuddedBar";
 function WhatIsTLab() {
 	return (
 		<main className={styles.WhatIsTLab}>
-			<img src="/tlab-website/images/uomo-con-giornale.png" alt="Maestra con bambini" />
+			<img src="/tlab-website/images/maestra-con-bambino.png" alt="Maestra con bambino" />
 			<StuddedBar direction="v" />
 			<div className={styles.content}>
 				{/* <img className={styles.logo} alt="Logo del T-LAB" /> */}
