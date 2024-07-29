@@ -1,0 +1,92 @@
+.PictureLink {
+  position: relative;
+}
+
+/*
+Image is:
+- type 0: 300 x 230
+- type 1: 300 x 252
+- type 2: 300 x 237
+- type 3: 300 x 257
+- type 3: 300 x 243
+*/
+
+.type0 {
+  width: 300px;
+  height: 230px;
+
+  & .link {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 260px;
+    height: 190px;
+  }
+}
+
+.type1 {
+  width: 300px;
+  height: 252px;
+
+  & .link {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 260px;
+    height: 210px;
+  }
+}
+
+.type2 {
+  width: 300px;
+  height: 237px;
+
+  & .link {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 260px;
+    height: 200px;
+  }
+}
+
+.frame {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 20px;
+
+  text-align: center;
+  font-size: var(--font-size-large);
+  color: var(--black1);
+  font-weight: bold;
+  text-decoration: none;
+
+  background-color: var(--white2);
+
+  transition: background-color 0.2s;
+
+  /* cursor: url("/tlab-website/public/images/mano.png") 50 0, auto;	 */
+  cursor: url("/tlab-website/public/images/mano40.png") 40 0, auto;
+  /* cursor: url("/tlab-website/public/images/mano2.png") 30 0, auto;	 */
+
+  &:hover {
+    background-color: var(--white4);
+
+    & .text {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.text {
+  white-space: "pre-wrap";
+  transition: transform 0.2s;
+}

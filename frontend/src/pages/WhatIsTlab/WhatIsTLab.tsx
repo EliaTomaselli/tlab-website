@@ -5,11 +5,18 @@ import StuddedBar from "../../components/StuddedBar/StuddedBar";
 function WhatIsTLab() {
 	return (
 		<main className={styles.WhatIsTLab}>
-			<img src="/tlab-website/images/maestra-con-bambino.png" alt="Maestra con bambino" />
-			<StuddedBar direction="v" />
+			<div className={styles.background}></div>
+			<div className={styles.barContainer}>
+				<StuddedBar className={styles.StuddedBar} direction="v" />
+				<img
+					className={styles.maestraConBambino}
+					src="/tlab-website/images/maestra-con-bambino.png"
+					alt="Maestra con bambino"
+				/>
+			</div>
 			<div className={styles.content}>
 				{/* <img className={styles.logo} alt="Logo del T-LAB" /> */}
-				<div className={styles.logoPlaceholder}></div>
+				<img className={styles.logo} src="/tlab-website/images/tlab-logo.png" alt="Logo del T-LAB" />
 				<p className={styles.description}>
 					Aute cillum veniam ut qui officia voluptate in id tempor nulla velit laboris. Aliquip minim excepteur sint
 					tempor enim sit culpa ad quis id. Aute anim ad nisi mollit est do culpa laboris laborum elit reprehenderit

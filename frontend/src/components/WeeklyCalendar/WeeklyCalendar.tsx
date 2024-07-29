@@ -93,6 +93,7 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 					className={clsx({
 						[styles.day]: true,
 						[styles.isInMonth]: date.month === this.state.date.month,
+						[styles.isToday]: date.month === this.now.month && date.day === this.now.day,
 					})}
 				>
 					{date.day}
@@ -119,27 +120,25 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 		}
 
 		return (
-			<div className={clsx(styles.Calendar, this.props.className)}>
-				<div className={styles.calendarViewNavigator}>
+			<div className={clsx(styles.WeeklyCalendar, this.props.className)}>
+				<div className={styles.calendarNavigator}>
 					<div className={styles.nextAndPrevContainer}>
 						<button className={styles.prevButton} onClick={() => this.onCalendarViewChange("previous")}>
-							<Arrow direction="left" />
+							<Arrow className={styles.prevArrow} direction="left" length={4} width={3} />
 						</button>
 						<span className={styles.currentYearAndMonth}>
 							{this.state.date.toLocaleString({ month: "short", year: "numeric" })}
 						</span>
 						<button className={styles.nextButton} onClick={() => this.onCalendarViewChange("next")}>
-							<Arrow direction="right" />
+							<Arrow className={styles.nextArrow} direction="right" length={4} width={3} />
 						</button>
 					</div>
 					<button className={styles.todayButton} onClick={() => this.onCalendarViewChange("today")}>
 						{translations[locale].today}
 					</button>
 				</div>
-				<ul className={styles.calendarView}>
-					<ul className={styles.weekdays}>{weekdayElements}</ul>
-					<ul className={styles.days}>{dayElements}</ul>
-				</ul>
+				<ul className={styles.weekdays}>{weekdayElements}</ul>
+				<ul className={styles.week}>{dayElements}</ul>
 			</div>
 		);
 	}

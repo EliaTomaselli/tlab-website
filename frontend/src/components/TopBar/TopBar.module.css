@@ -1,27 +1,28 @@
 .TopBar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	height: var(--top-bar-height);
+  height: var(--top-bar-height);
 
-	background-color: #e69573;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #e69573;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
-	z-index: 1000;
-	user-select: none;
+  z-index: 1000;
+  user-select: none;
 
+  /* background-color: #c54409; */
   background-image: url("/tlab-website/images/corten.jpg");
 	background-repeat: repeat;
 }
 
 .rightTopBar {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-	height: 100%;
-	margin-right: auto;
+  height: 100%;
+  margin-right: auto;
 }
 
 .title {
@@ -31,10 +32,10 @@
 }
 
 .leftTopBar {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-	height: 100%;
-	margin-left: auto;
+  height: 100%;
+  margin-left: auto;
 }

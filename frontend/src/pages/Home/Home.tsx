@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 
 import MaleAvatar from "../../components/MaleAvatar/MaleAvatar";
 import FemaleAvatar from "../../components/FemaleAvatar/FemaleAvatar";
-import FramedLink from "../../components/FramedLink/FramedLink";
+import OvalLink from "../../components/OvalLink/OvalLink";
+import BlackboardLink from "../../components/BlackboardLink/BlackboardLink";
 import StuddedBar from "../../components/StuddedBar/StuddedBar";
 
 function Home() {
@@ -12,15 +13,15 @@ function Home() {
 
 	return (
 		<main className={styles.Home}>
-			<MaleAvatar className={styles.MaleAvatar} alt={t("avatar")} />
-      <StuddedBar direction="v" />
+			<div className={styles.background}>
+				<MaleAvatar className={styles.MaleAvatar} alt={t("avatar")} />
+			</div>
+			<StuddedBar direction="v" />
 			<div className={styles.links}>
-				<FramedLink to="what-is-tlab" text={t("Cos'è il T-Lab")} />
-				<FramedLink to="points-of-interests" text={t("Luoghi d'interesse")} />
-				<FramedLink to="paths" text={t("Mappa percorsi")} />
-				<FramedLink to="events" text={t("Eventi in programma")} />
-				<FramedLink to="hospitality" text={t("Accoglienza")} />
-				<FramedLink to="products" text={t("Prodotti del territorio")} />
+				<BlackboardLink to="what-is-tlab" text={t("Cos'è il T-Lab")} type={2} />
+				<OvalLink to="paths" text={t("Esplora il territorio")} />
+				<OvalLink to="events" text={t("Eventi in programma")} />
+				<OvalLink to="hospitality" text={t("Accoglienza\ne servizi")} />
 			</div>
 			<FemaleAvatar className={styles.FemaleAvatar} alt={t("avatar")} />
 		</main>

@@ -6,6 +6,13 @@
 .left {
 	display: grid;
   grid-template-rows: 300px 40px 1fr;
+  background-image: url("/tlab-website/public/images/tappezzeria.jpg");
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .EventsList {
@@ -18,15 +25,20 @@
   width: 100%;
 }
 
+.weeklyCalendar {
+  height: 90%;
+  width: 90%;
+}
+
 .barContainer {
   grid-column: span 2;
 
 	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
 	width: 100%;
+  height: 100%;
 
 	& .studdedBar {
 		position: absolute;

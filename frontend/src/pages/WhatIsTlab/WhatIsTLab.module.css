@@ -1,12 +1,39 @@
 .WhatIsTLab {
   display: grid;
-  grid-template-columns: 350px 40px 1fr;
+	grid-template-columns: 1fr 40px 4fr;
   justify-items: center;
   align-items: center;
-	/* color: var(--white5); */
-	/* color: var(--black1); */
 	color: var(--white5);
   font-size: var(--font-size-xlarge);
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("/tlab-website/public/images/tappezzeria.jpg");
+}
+
+.barContainer {
+	position: relative;
+  display: flex;
+  align-items: center;
+
+	width: 100%;
+  height: 100%;
+
+	& .studdedBar {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	& .maestraConBambino {
+    position: absolute;
+    left: -250px;
+		pointer-events: none;
+    user-select: none;
+	}
 }
 
 .content {
@@ -15,20 +42,12 @@
 
 .logo {
   display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.logoPlaceholder {
-  margin-left: 300px;
-  width: 600px;
-  height: 300px;
-  border-radius: 50%;
-  background-color: var(--black1);
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .description {
-	margin-top: 60px;
+	margin-top: 30px;
 	padding-right: 60px;
 	padding-left: 60px;
 

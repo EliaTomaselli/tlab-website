@@ -42,7 +42,7 @@ function Events() {
 				<img className={styles.uomoConGiornale} src="/tlab-website/images/uomo-con-giornale.png" alt="uomo con giornale" />
 			</div>
 			<div className={styles.right}>
-				<WeeklyCalendar locale={i18n.language} events={calendarEvents} />
+				<WeeklyCalendar className={styles.weeklyCalendar} locale={i18n.language} events={calendarEvents} />
 			</div>
 		</main>
 	);
