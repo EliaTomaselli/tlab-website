@@ -18,7 +18,7 @@ function Paths() {
 			</div>
 			<div className={styles.barContainer}>
 				<StuddedBar direction="v" />
-				<img className={styles.uomoConCannocchiale} src="/tlab-website/public/images/uomo-con-cannocchiale.png" alt="Uomo con cannocchiale" />
+				<img className={styles.uomoConCannocchiale} src="/tlab-website/images/uomo-con-cannocchiale.png" alt="Uomo con cannocchiale" />
 			</div>
 			<Map></Map>
 		</main>

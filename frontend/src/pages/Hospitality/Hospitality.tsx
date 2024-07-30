@@ -15,7 +15,7 @@ function Hospitality() {
 			</div>
 			<div className={styles.barContainer}>
 				<StuddedBar className={styles.studdedBar} direction="v" />
-				<img className={styles.donnaConCaffe} src="/tlab-website/public/images/donna-con-caffe.png"></img>
+				<img className={styles.donnaConCaffe} src="/tlab-website/images/donna-con-caffe.png" alt="Donna che porta il Caffè"></img>
 			</div>
 		</main>
 	);

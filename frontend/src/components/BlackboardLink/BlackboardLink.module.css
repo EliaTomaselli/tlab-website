@@ -71,9 +71,9 @@ Image is:
 
   transition: background-color 0.2s;
 
-  /* cursor: url("/tlab-website/public/images/mano.png") 50 0, auto;	 */
-  cursor: url("/tlab-website/public/images/mano40.png") 40 0, auto;	
-  /* cursor: url("/tlab-website/public/images/mano2.png") 30 0, auto;	 */
+  /* cursor: url("/tlab-website/images/mano.png") 50 0, auto;	 */
+  cursor: url("/tlab-website/images/mano40.png") 40 0, auto;	
+  /* cursor: url("/tlab-website/images/mano2.png") 30 0, auto;	 */
 
   &:hover {
     background-color: var(--black3);

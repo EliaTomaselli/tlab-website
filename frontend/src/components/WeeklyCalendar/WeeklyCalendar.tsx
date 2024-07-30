@@ -18,46 +18,40 @@ export type WeeklyCalendarEvent = {
 type WeeklyCalendarProps = {
 	locale: string;
 	events: WeeklyCalendarEvent[];
+	date: DateTime;
+	onDateChange: (time: DateTime) => void;
 	className?: string;
 };
 
-type WeeklyCalendarState = {
-	date: DateTime;
-};
-
-class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendarState> {
+class WeeklyCalendar extends React.Component<WeeklyCalendarProps> {
 	// Time to use to initialize the calendar
 	// And to keep track of today when the user clicks on the "today" button
-	private now: DateTime = DateTime.now();
+	private readonly today: DateTime;
 
 	constructor(props: WeeklyCalendarProps) {
 		super(props);
 
-		this.state = {
-			date: this.now,
-		};
+		this.today = DateTime.now();
 
 		this.onCalendarViewChange = this.onCalendarViewChange.bind(this);
 	}
 
 	private onCalendarViewChange(operation: "today" | "next" | "previous") {
+		let newDate: DateTime;
+
 		switch (operation) {
 			case "today":
-				this.setState({
-					date: this.now,
-				});
+				newDate = this.today;
 				break;
 			case "next":
-				this.setState({
-					date: this.state.date.plus({ month: 1 }),
-				});
+				newDate = this.props.date.plus({ week: 1 });
 				break;
 			case "previous":
-				this.setState({
-					date: this.state.date.minus({ month: 1 }),
-				});
+				newDate = this.props.date.minus({ week: 1 });
 				break;
 		}
+
+		this.props.onDateChange(newDate);
 	}
 
 	private sortCalendarEventsByDate(calendarEvents: WeeklyCalendarEvent[]): WeeklyCalendarEvent[] {
@@ -67,8 +61,8 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 	render() {
 		const locale = this.props.locale as keyof typeof translations;
 
-		const start = this.state.date.setLocale(locale).startOf("week", { useLocaleWeeks: true });
-		const end = this.state.date.setLocale(locale).endOf("week", { useLocaleWeeks: true });
+		const start = this.props.date.setLocale(locale).startOf("week", { useLocaleWeeks: true });
+		const end = this.props.date.setLocale(locale).endOf("week", { useLocaleWeeks: true });
 
 		let calendarEvents = this.sortCalendarEventsByDate([...this.props.events]);
 		calendarEvents = calendarEvents.filter((event) => event.date >= start && event.date <= end);
@@ -92,15 +86,14 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 					key={date.day}
 					className={clsx({
 						[styles.day]: true,
-						[styles.isInMonth]: date.month === this.state.date.month,
-						[styles.isToday]: date.month === this.now.month && date.day === this.now.day,
+						[styles.isToday]: date.month === this.today.month && date.day === this.today.day,
 					})}
 				>
 					{date.day}
 					{eventsOfTheDay.length !== 0 && (
 						<div className={styles.events}>
 							{eventsOfTheDay.map((event, index) => (
-								<EventBullet key={index} color={event.color} title={event.title} />
+								<EventBullet key={index} color={event.color} />
 							))}
 						</div>
 					)}
@@ -119,6 +112,12 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 			);
 		}
 
+		let currentYearAndMonthStr = start.toLocaleString({ month: "short", year: "numeric" });
+
+    if (start.month !== end.month) {
+      currentYearAndMonthStr += ` - ${end.toLocaleString({ month: "short", year: "numeric" })}`;
+    }
+
 		return (
 			<div className={clsx(styles.WeeklyCalendar, this.props.className)}>
 				<div className={styles.calendarNavigator}>
@@ -126,9 +125,7 @@ class WeeklyCalendar extends React.Component<WeeklyCalendarProps, WeeklyCalendar
 						<button className={styles.prevButton} onClick={() => this.onCalendarViewChange("previous")}>
 							<Arrow className={styles.prevArrow} direction="left" length={4} width={3} />
 						</button>
-						<span className={styles.currentYearAndMonth}>
-							{this.state.date.toLocaleString({ month: "short", year: "numeric" })}
-						</span>
+						<span className={styles.currentYearAndMonth}>{currentYearAndMonthStr}</span>
 						<button className={styles.nextButton} onClick={() => this.onCalendarViewChange("next")}>
 							<Arrow className={styles.nextArrow} direction="right" length={4} width={3} />
 						</button>

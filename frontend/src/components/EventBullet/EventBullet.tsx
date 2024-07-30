@@ -1,7 +1,6 @@
 import styles from "./EventBullet.module.css";
 
 type EventBulletProps = {
-	title: string;
 	color: string;
 };
 

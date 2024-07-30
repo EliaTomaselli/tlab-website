@@ -1,7 +1,7 @@
 :root {
 	--frame-size: 40px;
 	--half-frame-size: calc(var(--frame-size) / 2);
-	--frame-image: url("/tlab-website/public/images/fascia.png");
+	--frame-image: url("/tlab-website/images/fascia.png");
 }
 
 .CortenFrame {

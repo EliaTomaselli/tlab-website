@@ -1,23 +1,26 @@
 .EventListItem {
-	display: grid;
-  grid-template-columns: 16px 1fr;
-	gap: 10px;
+  display: grid;
+  grid-template-columns: 16px 16px min-content 1fr;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
 }
 
 .eventName {
-	font-size: var(--font-size-xlarge);
-	font-weight: bold;
+  font-size: var(--font-size-xlarge);
+  font-weight: bold;
 }
 
 .eventCount {
-	font-size: var(--font-size-xlarge);
-	font-weight: normal;
+  font-size: var(--font-size-xlarge);
+  font-weight: normal;
+  margin-right: auto;
 }
 
 .eventColor {
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background-color: purple;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: purple;
 }

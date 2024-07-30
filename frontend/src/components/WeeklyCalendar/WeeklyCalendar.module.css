@@ -26,11 +26,12 @@
 }
 
 .currentYearAndMonth {
-	width: 120px;
+	width: 240px;
 	text-align: center;
 
 	color: var(--white5);
 	font-weight: bold;
+  white-space: nowrap;
 }
 
 .todayButton {
@@ -128,14 +129,10 @@
 
   user-select: none;
   list-style: none;
-  color: var(--black5);
-
+  color: var(--black1);
+  font-weight: bold;
+  
 	background-color: rgba(255, 255, 255, 0.5);
-
-	&.isInMonth {
-		color: var(--black1);
-		font-weight: bold;
-	}
 
 	&.isToday {
 		color: var(--white5);

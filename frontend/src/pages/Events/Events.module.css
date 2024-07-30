@@ -1,18 +1,41 @@
 .Events {
 	display: grid;
-	grid-template-columns: 2fr 40px 1fr 4fr;
+	grid-template-columns: 2fr 40px 1fr 5fr;
 }
 
 .left {
 	display: grid;
   grid-template-rows: 300px 40px 1fr;
-  background-image: url("/tlab-website/public/images/tappezzeria.jpg");
+  background-image: url("/tlab-website/images/tappezzeria.jpg");
 }
 
 .right {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.dashedOutline {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.eventDescriptionPlaceholder {
+  color: var(--black3);
+  font-size: var(--font-size-xlarge);
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
 }
 
 .EventsList {
@@ -26,8 +49,8 @@
 }
 
 .weeklyCalendar {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
 }
 
 .barContainer {
@@ -48,7 +71,7 @@
 
 	& .uomoConGiornale {
     position: absolute;
-    left: -35px;
+    left: -15px;
 		pointer-events: none;
     user-select: none;
 	}
